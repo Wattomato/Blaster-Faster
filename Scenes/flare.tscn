@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://hwgvtfb0o8e"]
+
+[ext_resource type="Texture2D" uid="uid://ccminbq2wrbok" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/flare.png" id="1_88dlv"]
+[ext_resource type="Script" path="res://Scripts/flare.gd" id="2_wbl5x"]
+
+[sub_resource type="Animation" id="Animation_cy8p0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7toyb"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.133333, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_paos3"]
+_data = {
+"RESET": SubResource("Animation_cy8p0"),
+"fade": SubResource("Animation_7toyb")
+}
+
+[node name="Flare" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_88dlv")
+script = ExtResource("2_wbl5x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_paos3")
+}
+speed_scale = 5.0

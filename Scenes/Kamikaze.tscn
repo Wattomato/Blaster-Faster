@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://4nopws4042t"]
+
+[ext_resource type="PackedScene" uid="uid://dfgejo3r2ykj4" path="res://Scenes/enemy.scn" id="1_ktdid"]
+[ext_resource type="Texture2D" uid="uid://dl65hkmrd3vcg" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/enemy_kamikaze.png" id="2_u8g3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnotq"]
+size = Vector2(48, 56)
+
+[node name="KamikazeEnemy" instance=ExtResource("1_ktdid")]
+velocity = Vector2(0, 750)
+armor = 3
+
+[node name="Sprite2D" parent="Area2D" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_u8g3k")
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_xnotq")

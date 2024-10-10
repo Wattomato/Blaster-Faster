@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://deh70ot2ku36k"
+path="res://.godot/imported/hit_enemy.wav-df275151012c7c2a681a4af18f2a504a.sample"
+
+[deps]
+
+source_file="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sounds/hit_enemy.wav"
+dest_files=["res://.godot/imported/hit_enemy.wav-df275151012c7c2a681a4af18f2a504a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

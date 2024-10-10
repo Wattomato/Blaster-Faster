@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://choa3pwm884vp"]
+
+[ext_resource type="Script" path="res://Scripts/Laser.gd" id="1_w6vxx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxwuf"]
+size = Vector2(18, 28)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_w6vxx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gxwuf")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

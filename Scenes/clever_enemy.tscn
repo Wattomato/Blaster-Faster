@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgpjv6nlqllbv"]
+
+[ext_resource type="PackedScene" uid="uid://dfgejo3r2ykj4" path="res://Scenes/enemy.scn" id="1_ffamk"]
+[ext_resource type="Texture2D" uid="uid://cywhbwou04jyf" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/enemy_clever.png" id="2_bf6tc"]
+[ext_resource type="Script" path="res://Scripts/clever_enemy.tres.gd" id="2_dex0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rnlk"]
+size = Vector2(64, 58)
+
+[node name="CleverEnemy" instance=ExtResource("1_ffamk")]
+position = Vector2(156, 94)
+script = ExtResource("2_dex0c")
+velocity = Vector2(300, 300)
+
+[node name="Sprite2D" parent="Area2D" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_bf6tc")
+
+[node name="CollisionShape2D" parent="Area2D" index="1"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_8rnlk")
+
+[node name="Marker2D" type="Marker2D" parent="Area2D" index="2"]
+position = Vector2(0, 27)

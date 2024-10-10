@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvf0ulhsu5gh5"
+path="res://.godot/imported/laser_enemy.wav-809a18350eac75205322b017f95f24b1.sample"
+
+[deps]
+
+source_file="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sounds/laser_enemy.wav"
+dest_files=["res://.godot/imported/laser_enemy.wav-809a18350eac75205322b017f95f24b1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

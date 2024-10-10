@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://batvj01pcqeld"]
+
+[ext_resource type="Script" path="res://Scripts/spawner_enemy.gd" id="1_hrq4c"]
+
+[node name="SpawnerEnemy" type="Node"]
+script = ExtResource("1_hrq4c")
+
+[node name="container" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

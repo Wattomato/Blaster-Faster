@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxbwgi8ll0ish"
+path="res://.godot/imported/powerup.wav-fcd18c2d29640707f22630411ca00d98.sample"
+
+[deps]
+
+source_file="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sounds/powerup.wav"
+dest_files=["res://.godot/imported/powerup.wav-fcd18c2d29640707f22630411ca00d98.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

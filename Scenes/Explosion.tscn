@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5rtq7ebkk2jf"]
+
+[ext_resource type="Texture2D" uid="uid://c37jbu3r37w2d" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/explosion.png" id="1_i2i36"]
+[ext_resource type="Texture2D" uid="uid://dfls3smmvbdd2" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/smoke.png" id="1_iuva0"]
+[ext_resource type="Script" path="res://Scripts/explosion.gd" id="2_wwjlc"]
+[ext_resource type="Texture2D" uid="uid://ccminbq2wrbok" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/flare.png" id="3_g70me"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a23ta"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_hjyrb"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_frcw3"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_4yfcq"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.133333, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ul32f"]
+_data = {
+"fade": SubResource("Animation_4yfcq")
+}
+
+[node name="Explosion" type="Sprite2D"]
+texture = ExtResource("1_i2i36")
+script = ExtResource("2_wwjlc")
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_a23ta")
+emitting = false
+amount = 25
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("1_iuva0")
+emission_shape = 1
+emission_sphere_radius = 60.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 5.0
+color_ramp = SubResource("Gradient_hjyrb")
+
+[node name="Flare" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_a23ta")
+emitting = false
+amount = 25
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("3_g70me")
+emission_shape = 1
+emission_sphere_radius = 60.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 5.0
+color_ramp = SubResource("Gradient_frcw3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ul32f")
+}

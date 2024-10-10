@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://yj5m35lpqxgo"]
+
+[ext_resource type="PackedScene" uid="uid://dyo0pyggwypf0" path="res://Scenes/node_2d.tscn" id="1_3d6jq"]
+[ext_resource type="PackedScene" uid="uid://cvujtudlhsh7y" path="res://Scenes/Stars.tscn" id="2_wxs4c"]
+[ext_resource type="PackedScene" uid="uid://batvj01pcqeld" path="res://Scenes/spawner_enemy.tscn" id="3_mlk34"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="4_1js7t"]
+[ext_resource type="Texture2D" uid="uid://bdqbi7coe3upw" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/armor.png" id="5_htjvq"]
+[ext_resource type="Script" path="res://Scripts/spr_armor.gd" id="6_21qnf"]
+[ext_resource type="Texture2D" uid="uid://dmn28xf23t5fr" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/score.png" id="7_y24pk"]
+[ext_resource type="Script" path="res://Scripts/score.gd" id="8_ps3yw"]
+[ext_resource type="FontFile" uid="uid://d4hh03fldqlng" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/fonts/m5x7.ttf" id="9_i1n8f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0gadb"]
+font = ExtResource("9_i1n8f")
+font_size = 15
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Stars" parent="." instance=ExtResource("2_wxs4c")]
+
+[node name="Ship" parent="." instance=ExtResource("1_3d6jq")]
+position = Vector2(183, 851)
+
+[node name="SpawnerEnemy" parent="." instance=ExtResource("3_mlk34")]
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+script = ExtResource("4_1js7t")
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Spr_armor" type="Sprite2D" parent="Hud"]
+position = Vector2(10, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("5_htjvq")
+centered = false
+hframes = 5
+frame = 4
+script = ExtResource("6_21qnf")
+
+[node name="Score" type="Sprite2D" parent="Hud"]
+position = Vector2(257, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("7_y24pk")
+centered = false
+script = ExtResource("8_ps3yw")
+
+[node name="Label" type="Label" parent="Hud/Score"]
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.5
+anchor_right = 0.521
+anchor_bottom = 0.5
+offset_left = -21.487
+offset_top = -8.0
+offset_right = 19.513
+offset_bottom = 6.0
+text = "0"
+label_settings = SubResource("LabelSettings_0gadb")
+horizontal_alignment = 2
+text_overrun_behavior = 1
+
+[connection signal="armorch" from="Ship" to="Hud/Spr_armor" method="_on_ship_armorch"]

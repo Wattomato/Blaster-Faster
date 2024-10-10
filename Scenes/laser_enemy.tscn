@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfkbs75c442su"]
+
+[ext_resource type="PackedScene" uid="uid://choa3pwm884vp" path="res://Scenes/Laser.tscn" id="1_3fbpt"]
+[ext_resource type="Texture2D" uid="uid://covrm4k6v31fa" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/laser_enemy.png" id="2_j8wwm"]
+
+[node name="Area2D" instance=ExtResource("1_3fbpt")]
+velocity = Vector2(0, 400)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_j8wwm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyg00y8k3cm15"
+path="res://.godot/imported/music.ogg-fd874ada650783da2970fb73a597cafe.oggvorbisstr"
+
+[deps]
+
+source_file="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sounds/music.ogg"
+dest_files=["res://.godot/imported/music.ogg-fd874ada650783da2970fb73a597cafe.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

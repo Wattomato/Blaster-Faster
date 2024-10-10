@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyo0pyggwypf0"]
+
+[ext_resource type="Texture2D" uid="uid://dnibksp3qwt5e" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/ship.png" id="1_ci3x7"]
+[ext_resource type="Script" path="res://Scripts/Ship.gd" id="1_h24xd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n26jj"]
+size = Vector2(64, 51)
+
+[node name="Ship" type="CharacterBody2D"]
+position = Vector2(164, 100)
+script = ExtResource("1_h24xd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_ci3x7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_n26jj")
+
+[node name="Node" type="Node2D" parent="."]
+
+[node name="Left" type="Marker2D" parent="Node"]
+position = Vector2(-26, -18)
+
+[node name="Right" type="Marker2D" parent="Node"]
+position = Vector2(26, -18)

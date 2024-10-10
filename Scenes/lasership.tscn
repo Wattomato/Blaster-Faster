@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gydmfdlicnhe"]
+
+[ext_resource type="PackedScene" uid="uid://choa3pwm884vp" path="res://Scenes/Laser.tscn" id="1_tfia7"]
+[ext_resource type="Texture2D" uid="uid://b01xyknbt12e1" path="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sprites/laser_ship.png" id="2_5ja58"]
+
+[node name="Area2D" instance=ExtResource("1_tfia7")]
+velocity = Vector2(0, -350)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_5ja58")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(0, -1.19209e-07)
+scale = Vector2(0.6, 1.2)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

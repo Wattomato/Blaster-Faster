@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djhy5xqk04eex"
+path="res://.godot/imported/laser_ship.wav-351c674bf99e1e293077e5c8aed21e68.sample"
+
+[deps]
+
+source_file="res://Blaster Faster - Assets Only/Blaster Faster - Assets Only/sounds/laser_ship.wav"
+dest_files=["res://.godot/imported/laser_ship.wav-351c674bf99e1e293077e5c8aed21e68.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
